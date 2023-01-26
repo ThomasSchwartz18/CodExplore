@@ -83,7 +83,7 @@ const handleSubmit = async (e) => {
       "Content-type": "application/json",
     },
     body: JSON.stringify({
-      prompt: data.get("prompy"),
+      prompt: data.get("prompt"),
     }),
   });
 
@@ -93,6 +93,8 @@ const handleSubmit = async (e) => {
   if (response.ok) {
     const data = await response.json();
     const parsedData = data.bot.trim();
+
+    console.log(messageDiv);
 
     typeText(messageDiv, parsedData);
   } else {
