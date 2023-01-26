@@ -35,7 +35,7 @@ app.post("/", async (req, res) => {
       presence_penalty: 0,
     });
 
-    req.status(200).send({
+    res.status(200).send({
       bot: response.data.choices[0].text,
     });
   } catch (error) {
